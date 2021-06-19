@@ -19,7 +19,7 @@ class App extends Component {
       <div className="container">
         <Cards data={data} />
         <CountryPicker />
-        <Chart />
+        <Chart data={data} />
       </div>
     );
   }

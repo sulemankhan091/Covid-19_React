@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent, Typography, Grid } from "@material-ui/core";
 import CountUp from "react-countup";
-
+import "./Cards.css";
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   if (!confirmed) {
     return "Loading....";
@@ -9,7 +9,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   return (
     <div className="container">
       <Grid container spacing={3} justify="center">
-        <Grid item component={Card}>
+        <Grid item component={Card} xs={12} md={3} className="card infected">
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               <CountUp
@@ -27,7 +27,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             </Typography>
           </CardContent>
         </Grid>
-        <Grid item component={Card}>
+        <Grid item component={Card} xs={12} md={3} className="card recovered">
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               <CountUp
@@ -45,7 +45,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             </Typography>
           </CardContent>
         </Grid>
-        <Grid item component={Card}>
+        <Grid item component={Card} xs={12} md={3} className="card deaths">
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               <CountUp
